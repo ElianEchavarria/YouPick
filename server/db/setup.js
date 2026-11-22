@@ -5,7 +5,9 @@ import { readFile } from "node:fs/promises";
 import { pool } from "./pool.js";
 
 if (!pool) {
-  console.error("DATABASE_URL isn't set in .env, so there's no database to set up.");
+  console.error(
+    "DATABASE_URL isn't set (in .env locally, or in your host's environment settings), so there's no database to set up.",
+  );
   process.exit(1);
 }
 

@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +13,7 @@
     "preview": "vite preview",
     "dev:server": "node --watch --env-file=.env server/index.js",
     "test": "node --test server/*.test.js",
-    "db:setup": "node --env-file=.env server/db/setup.js",
+    "db:setup": "node --env-file-if-exists=.env server/db/setup.js",
     "start": "NODE_ENV=production node --env-file-if-exists=.env server/index.js"
   },
   "dependencies": {
